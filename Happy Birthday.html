@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital@0;1&display=swap">
+<style>
+:root{--deep:#050505;--mid:#7a0010;--hot:#d0102a;--ink:#fff;--gold:#e8c36a;--paper:#f4efe4;--text:#2b1418;--go:#5ddc5d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:Lora,Georgia,serif;background:var(--deep) linear-gradient(100deg,var(--deep) 0%,var(--mid) 45%,var(--hot) 100%) fixed;min-height:100svh}
+.s{display:none;min-height:100svh;padding:26px 16px 80px;text-align:center;max-width:980px;margin:0 auto}
+.s.on{display:block}
+.sc{font-family:'Great Vibes',cursive;font-weight:400;line-height:1.1}
+h1.sc{font-size:clamp(2.6rem,10vw,4.6rem);margin:18px 0 6px}
+.back{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;background:var(--go);color:#0b2b0b;border:0;border-radius:12px;padding:8px 16px;font:700 .95rem Lora,serif;cursor:pointer;box-shadow:0 3px 0 #2f9a2f}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.env{position:relative;width:min(420px,92%);margin:40px auto 10px}
+.env::before{content:"";position:absolute;left:0;right:0;bottom:-26px;height:120px;background:#cfc8b3;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:2}
+.card{position:relative;z-index:1;background:var(--paper);color:var(--text);padding:26px 18px 54px;box-shadow:0 8px 24px rgba(0,0,0,.4);transform:rotate(-1.5deg)}
+.card .sc{font-size:clamp(2.4rem,9vw,3.4rem);color:#9a0f22}
+.tap{margin-top:70px;background:none;border:0;color:#ffc9cf;font:italic 1.1rem Lora,serif;text-decoration:underline;cursor:pointer}
+.row{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:20px 0}
+.pol{background:#fff;padding:8px 8px 22px;width:min(190px,42vw);box-shadow:0 6px 16px rgba(0,0,0,.45);transform:rotate(var(--r,0deg))}
+.pol>*{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:linear-gradient(135deg,#f1d5d5,#c9777f);color:#8a0f1f;font:italic .85rem Lora,serif;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
+.pol img{display:block}
+.pol.sm{width:min(120px,28vw)}
+.frame{border:9px solid var(--gold);outline:2px solid #8a6a1c;background:#222;width:min(200px,60vw);box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.frame>*{display:flex;width:100%;aspect-ratio:3/4;object-fit:cover;align-items:center;justify-content:center;color:#ffc9cf;font:italic .85rem Lora,serif;padding:8px;background:#2a0508}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 12px;max-width:480px;margin:30px auto 0}
+.menu button{background:none;border:0;color:var(--ink);cursor:pointer}
+.menu .ic{display:block;font-size:4.2rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
+.menu .sc{display:block;font-size:2rem;text-decoration:underline;text-underline-offset:6px}
+.letter{background:var(--paper);color:var(--text);max-width:420px;padding:22px;text-align:justify;box-shadow:0 8px 20px rgba(0,0,0,.45);transform:rotate(-1.5deg);white-space:pre-line;line-height:1.7}
+.split{display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:center;margin-top:18px}
+.vinyl{width:150px;height:150px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle,#c01818 0 18%,#111 19% 60%,#2a2a2a 61% 64%,#111 65%);box-shadow:0 6px 16px rgba(0,0,0,.5)}
+.vinyl.spin{animation:sp 3s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.hint{font-size:.9rem;color:#ffc9cf;margin:10px 0 0}
+.gift{font-size:7rem;background:none;border:0;cursor:pointer;margin-top:30px}
+.gift.open{animation:pop .5s}
+@keyframes pop{50%{transform:scale(1.25) rotate(-6deg)}}
+.reveal{display:none;margin:10px auto;max-width:440px;font-size:1.15rem}
+.reveal.on{display:block}
+.heart{position:fixed;bottom:-30px;animation:up 4s ease-in forwards;pointer-events:none;font-size:1.6rem}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.heart,.vinyl.spin,.gift.open{animation:none}}
+.gear{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;width:46px;height:46px;border-radius:50%;border:0;background:#fff;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.panel{display:none;position:fixed;inset:auto 0 0 0;max-height:82svh;overflow:auto;z-index:30;background:#fff;color:#2a1b3d;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px));border-radius:20px 20px 0 0;text-align:left;box-shadow:0 -8px 30px rgba(0,0,0,.5)}
+.panel.on{display:block}
+.panel h2{margin:0 0 8px;font-size:1.2rem}
+.panel label{display:block;font-weight:700;margin:12px 0 4px}
+.panel input[type=text],.panel textarea{width:100%;font:inherit;border:2px solid #d9cff5;border-radius:10px;padding:9px 11px}
+.panel textarea{min-height:90px}
+.panel input[type=file]{width:100%}
+.panel .done{margin-top:16px;background:var(--hot);color:#fff;border:0;border-radius:999px;padding:11px 22px;font:700 1rem Lora,serif;cursor:pointer}
+.panel p{font-size:.85rem;color:#6a5a8f;margin:6px 0 0}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px;margin-top:10px}
+.th{display:flex;flex-direction:column;gap:4px}
+.th img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
+.th button{font:700 .8rem Lora,serif;border:1px solid #d9cff5;background:#fff;color:#2a1b3d;border-radius:8px;padding:5px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<section class="s on" id="cover">
+  <div class="env">
+    <div class="card"><div class="sc">Happy Birthday</div><div class="sc" id="nm" style="font-size:2rem">Sayang</div></div>
+  </div>
+  <div class="row" id="coverPics" style="margin-top:56px"></div>
+  <button class="tap" data-go="menu" type="button">Ketuk untuk kejutan</button>
+</section>
+
+<section class="s" id="menu">
+  <h1 class="sc" style="margin-top:50px">Choose the Surprise</h1>
+  <div class="menu">
+    <button type="button" data-go="journey"><span class="ic">📷</span><span class="sc">Journey</span></button>
+    <button type="button" data-go="moment"><span class="ic">⏱️</span><span class="sc">Moment</span></button>
+    <button type="button" data-go="playlist"><span class="ic">💿</span><span class="sc">Playlist</span></button>
+    <button type="button" data-go="gift"><span class="ic">🎁</span><span class="sc">Gift</span></button>
+  </div>
+</section>
+
+<section class="s" id="journey">
+  <button class="back" data-go="menu" type="button">Kembali</button>
+  <h1 class="sc" style="margin-top:40px">Journey</h1>
+  <div class="row" id="jPics"></div>
+</section>
+
+<section class="s" id="moment">
+  <button class="back" data-go="menu" type="button">Kembali</button>
+  <h1 class="sc" style="margin-top:40px" id="nm2">Sayang</h1>
+  <div class="split">
+    <div class="letter" id="letterOut"></div>
+    <div class="frame" id="mPic"></div>
+  </div>
+</section>
+
+<section class="s" id="playlist">
+  <button class="back" data-go="menu" type="button">Kembali</button>
+  <h1 class="sc" style="margin-top:40px">Playlist</h1>
+  <div class="split">
+    <div><button class="vinyl" id="vinyl" type="button" aria-label="Putar atau jeda lagu"></button><p class="hint" id="musicHint">Pilih lagu lewat tombol ⚙</p></div>
+    <div class="row" id="pPics" style="margin:0"></div>
+  </div>
+  <audio id="aud" loop></audio>
+</section>
+
+<section class="s" id="gift">
+  <button class="back" data-go="menu" type="button">Kembali</button>
+  <h1 class="sc" style="margin-top:40px">Gift</h1>
+  <button class="gift" id="giftBtn" type="button" aria-label="Buka hadiah">🎁</button>
+  <p class="hint" id="giftHint">Ketuk kadonya</p>
+  <div class="reveal" id="giftOut"></div>
+</section>
+
+<button class="gear" id="gear" type="button" aria-label="Pengaturan">⚙</button>
+<div class="panel" id="panel" role="dialog" aria-label="Pengaturan ucapan">
+  <h2>Atur ucapanmu</h2>
+  <label for="fName">Nama yang berulang tahun</label>
+  <input type="text" id="fName" value="Sayang" maxlength="40">
+  <label for="fLetter">Isi surat (halaman Moment)</label>
+  <textarea id="fLetter" maxlength="600">Selamat ulang tahun, Sayang. Di hari spesialmu ini, aku cuma mau bilang terima kasih karena sudah lahir ke dunia dan membawa begitu banyak kebahagiaan ke hidupku. Semoga bahagia terus, kini dan nanti.</textarea>
+  <label for="fGift">Pesan kejutan (halaman Gift)</label>
+  <textarea id="fGift" maxlength="400">Semoga semua doa baikmu terkabul tahun ini. Aku sayang kamu.</textarea>
+  <label for="fPhotos">Foto</label>
+  <input type="file" id="fPhotos" accept="image/*" multiple>
+  <div class="thumbs" id="thumbs"></div>
+  <label for="fMusic">Lagu</label>
+  <input type="file" id="fMusic" accept="audio/*">
+  <p>Foto dan lagu hanya tampil di browser ini dan tidak diunggah ke mana pun.</p>
+  <button class="done" id="done" type="button">Selesai</button>
+</div>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var photos=[];
+  function pick(i){
+    var f=document.createElement('input');f.type='file';f.accept='image/*';f.multiple=i>=photos.length;
+    f.onchange=function(){
+      var fl=Array.prototype.slice.call(f.files);if(!fl.length)return;
+      var out=[],n=0;
+      fl.forEach(function(file,k){var r=new FileReader();r.onload=function(){out[k]=r.result;if(++n===fl.length){out.forEach(function(x,j){if(i<photos.length&&j===0)photos[i]=x;else photos.push(x)});render()}};r.readAsDataURL(file)});
+    };
+    f.click();
+  }
+  function slot(i,cls){
+    var d=document.createElement('div');d.className=cls;d.style.setProperty('--r',((i%5)-2)*2.5+'deg');
+    var s=photos[i]||null,e;
+    if(s){e=document.createElement('img');e.src=s;e.alt='Foto '+(i+1)}
+    else{e=document.createElement('div');e.textContent='+ Tambah foto'}
+    e.style.cursor='pointer';e.tabIndex=0;e.setAttribute('role','button');e.title=s?'Ketuk untuk ganti foto':'Ketuk untuk menambah foto';
+    e.onclick=function(){pick(i)};e.onkeydown=function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick(i)}};
+    d.appendChild(e);return d;
+  }
+  function fill(id,n,cls){var h=$(id);h.innerHTML='';var c=Math.min(n,photos.length);for(var i=0;i<c;i++)h.appendChild(slot(i,cls));if(photos.length<n)h.appendChild(slot(photos.length,cls))}
+  function thumbs(){
+    var t=$('thumbs');t.innerHTML='';
+    photos.forEach(function(src,i){
+      var d=document.createElement('div');d.className='th';
+      var im=document.createElement('img');im.src=src;im.alt='Foto '+(i+1);d.appendChild(im);
+      function btn(txt,fn){var b=document.createElement('button');b.type='button';b.textContent=txt;b.onclick=fn;d.appendChild(b)}
+      btn('Ganti',function(){
+        var f=document.createElement('input');f.type='file';f.accept='image/*';
+        f.onchange=function(){if(!f.files[0])return;var rd=new FileReader();rd.onload=function(){photos[i]=rd.result;render()};rd.readAsDataURL(f.files[0])};
+        f.click();
+      });
+      if(i>0)btn('Jadikan utama',function(){photos.unshift(photos.splice(i,1)[0]);render()});
+      btn('Hapus',function(){photos.splice(i,1);render()});
+      t.appendChild(d);
+    });
+  }
+  function render(){
+    thumbs();
+    fill('coverPics',3,'pol sm');fill('jPics',24,'pol');fill('pPics',3,'frame');
+    var m=$('mPic');m.innerHTML='';m.appendChild(slot(0,'x').firstChild);
+  }
+  function go(id){
+    document.querySelectorAll('.s').forEach(function(s){s.classList.toggle('on',s.id===id)});
+    if(id!=='playlist')$('aud').pause(),$('vinyl').classList.remove('spin');
+    scrollTo(0,0);
+  }
+  document.querySelectorAll('[data-go]').forEach(function(b){b.onclick=function(){go(b.dataset.go)}});
+  $('fName').oninput=function(){var v=this.value||'Sayang';$('nm').textContent=v;$('nm2').textContent=v};
+  $('fLetter').oninput=function(){$('letterOut').textContent=this.value};
+  $('letterOut').textContent=$('fLetter').value;
+  $('fPhotos').onchange=function(){
+    var n=this.files.length,got=0,list=[];
+    Array.prototype.forEach.call(this.files,function(f){
+      var r=new FileReader();r.onload=function(){list.push(r.result);if(++got===n){photos=photos.concat(list);render()}};r.readAsDataURL(f);
+    });this.value='';
+  };
+  $('fMusic').onchange=function(){
+    var f=this.files[0];if(!f)return;
+    $('aud').src=URL.createObjectURL(f);$('musicHint').textContent='Ketuk piringan hitam untuk memutar';
+  };
+  $('vinyl').onclick=function(){
+    var a=$('aud');if(!a.src){$('panel').classList.add('on');return}
+    if(a.paused){a.play();this.classList.add('spin')}else{a.pause();this.classList.remove('spin')}
+  };
+  $('giftBtn').onclick=function(){
+    this.classList.add('open');$('giftOut').textContent=$('fGift').value;$('giftOut').classList.add('on');$('giftHint').style.display='none';
+    for(var i=0;i<14;i++){var h=document.createElement('span');h.className='heart';h.textContent=['❤️','🌹','❤️'][i%3];h.style.left=(Math.random()*92)+'vw';h.style.animationDelay=(Math.random()*1.2)+'s';document.body.appendChild(h);setTimeout(function(x){x.remove()}.bind(null,h),5500)}
+  };
+  $('gear').onclick=function(){$('panel').classList.toggle('on')};
+  $('done').onclick=function(){$('panel').classList.remove('on')};
+  render();
+})();
+</script>
+</body>
+</html>
